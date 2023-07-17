@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
     'allauth.socialaccount.providers.vk',
+    'svo_videoserviceapp',
     'svo_user.apps.SvoUserConfig'
 ]
 
@@ -61,7 +62,6 @@ ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_VERIFICATION = 'true'
 ACCOUNT_LOGOUT_ON_GET = False
 SOCIALACCOUNT_AUTO_SIGNUP = False
-
 
 SOCIALACCOUNT_PROVIDERS = {
     "google": {
