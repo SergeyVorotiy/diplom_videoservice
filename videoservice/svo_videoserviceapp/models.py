@@ -11,6 +11,9 @@ class VSUser(models.Model):
     ignore_list = ArrayField(models.CharField(max_length=128), blank=True, default=list)
     subscribes = ArrayField(models.CharField(max_length=128), blank=True, default=list)
 
+    def __str__(self):
+        return self.user.username
+
 
 class VSVideo(models.Model):
     name = models.CharField(max_length=128)
@@ -21,6 +24,9 @@ class VSVideo(models.Model):
     comments = models.ManyToManyField('VSComment', through='CommentVideo')
     upload = models.FileField()
 
+    def __str__(self):
+        return self.name
+
 
 class VSComment(models.Model):
     author = models.ForeignKey('VSUser', on_delete=models.CASCADE)
@@ -28,6 +34,9 @@ class VSComment(models.Model):
     published_date = models.DateTimeField(auto_now_add=True)
     likes = ArrayField(models.CharField(max_length=128), blank=True, default=list)
     ignored = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f'{self.author.username}/ {self.text}'
 
 
 class CommentVideo(models.Model):

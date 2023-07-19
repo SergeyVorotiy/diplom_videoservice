@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.google',
     'allauth.socialaccount.providers.vk',
     'svo_videoserviceapp',
+    'django_filters',
     'svo_user.apps.SvoUserConfig'
 ]
 
