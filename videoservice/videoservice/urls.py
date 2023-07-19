@@ -23,5 +23,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
     path('accounts/', include('allauth.urls')),
+    path('django-rest-allauth/', include('django_rest_allauth.api.urls')),
 
 ]
