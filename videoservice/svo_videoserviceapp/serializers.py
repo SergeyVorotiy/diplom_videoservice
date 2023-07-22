@@ -9,7 +9,13 @@ class VSVideoSerializer(serializers.HyperlinkedModelSerializer):
         fields = ['name', 'author', 'published_date', 'description', 'likes', 'comments', 'upload']
 
 
-class AuthorSerializer(serializers.HyperlinkedModelSerializer):
+class AuthorProfileSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = VSUser
         fields = ['user', 'black_list', 'ignore_list', 'subscribes']
+
+
+class AuthorPublicSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = VSUser
+        fields = ['user_username', 'subscribes']

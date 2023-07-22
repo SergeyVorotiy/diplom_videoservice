@@ -1,7 +1,7 @@
 from rest_framework import viewsets, permissions
 
 from .models import VSUser, VSVideo
-from .serializers import VSVideoSerializer, AuthorSerializer
+from .serializers import VSVideoSerializer, AuthorProfileSerializer
 
 
 class VSVideoViewSet(viewsets.ModelViewSet):
@@ -12,5 +12,5 @@ class VSVideoViewSet(viewsets.ModelViewSet):
 
 class AuthorViewSet(viewsets.ModelViewSet):
     queryset = VSUser.objects.all()
-    serializer_class = AuthorSerializer
+    serializer_class = AuthorProfileSerializer
     permission_classes = permissions.IsAuthenticatedOrReadOnly

@@ -23,6 +23,7 @@ class VSVideo(models.Model):
     description = models.TextField(blank=False, default='My new video')
     comments = models.ManyToManyField('VSComment', through='CommentVideo')
     upload = models.FileField()
+    is_public = models.BooleanField(default=True)
 
     def __str__(self):
         return self.name
